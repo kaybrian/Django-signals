@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.signals import post_save,pre_save
+from django.db.models.signals import post_save,pre_save 
 
 
 class Post(models.Model):
@@ -12,4 +12,5 @@ class Post(models.Model):
 def save_post(sender,instance,**kwargs):
     print("A new post post have been saved")
 
+pre_save.connect(save_post,sender=Post)
 post_save.connect(save_post,sender=Post)
