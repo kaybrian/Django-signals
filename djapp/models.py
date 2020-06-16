@@ -14,3 +14,9 @@ def save_post(sender,instance,**kwargs):
 
 pre_save.connect(save_post,sender=Post)
 post_save.connect(save_post,sender=Post)
+
+class Counter(models.Model):
+    number = models.PositiveIntegerField()
+
+    def __str__(self):
+        return str(self.number)
