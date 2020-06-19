@@ -16,7 +16,6 @@ pre_save.connect(save_post,sender=Post)
 post_save.connect(save_post,sender=Post)
 
 class Counter(models.Model):
-    number = models.PositiveIntegerField()
-
+    number = models.IntegerField(default=0)
     def __str__(self):
         return str(self.number)
